@@ -14,3 +14,4 @@ Tuyệt đối không sao chép dữ liệu của dự án ra thiết bị lưu 
 
 ## 3. Ca khuôn mặt: thấy mặt người rõ trong lô, guideline yêu cầu làm mờ
 Khi phát hiện hình ảnh có khuôn mặt người nhận diện rõ trong lô dữ liệu (ví dụ ảnh 000000000139 có chứa người thật và khuôn mặt rõ nét), kỹ thuật viên QC phải lập tức chuyển trạng thái lô dữ liệu sang Hold và gửi báo cáo khẩn cấp cho Quản lý dự án (PM) và Cán bộ phụ trách bảo vệ dữ liệu (DPO). Kỹ thuật viên tuyệt đối không được tự ý xóa ảnh hay dùng phần mềm cá nhân để tự làm mờ, vì hành động can thiệp thủ công này sẽ làm hỏng tính toàn vẹn của dataset (làm sai lệch manifest.json, sai mã băm sha256 của ảnh, phá vỡ cấu trúc scene_id và phân bổ job). Việc ẩn danh hóa khuôn mặt bắt buộc phải được xử lý lại từ đầu theo quy trình chuẩn của pipeline tiền xử lý dữ liệu đã được phê duyệt.
+

@@ -1,4 +1,4 @@
-{"event": "inject", "release_id": "lab250_70a563f4cf6f", "seed": 30007, "detail": "r30007"}
-{"event": "train", "release_id": "lab250_70a563f4cf6f", "run_id": "R-021"}
-{"event": "decision", "release_id": "lab250_70a563f4cf6f", "decision": "HOLD"}
-{"event": "release", "release_id": "lab250_70a563f4cf6f_v2", "parent": "lab250_70a563f4cf6f"}
+{"event": "inject", "release_id": "lab250_70d99e908798", "seed": 30007, "detail": "r30007"}
+{"event": "train", "release_id": "lab250_70d99e908798", "run_id": "R-021"}
+{"event": "decision", "release_id": "lab250_70d99e908798", "decision": "HOLD"}
+{"event": "release", "release_id": "lab250_70d99e908798_v2", "parent": "lab250_70d99e908798"}
