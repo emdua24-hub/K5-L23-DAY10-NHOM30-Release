@@ -39,6 +39,7 @@
 - **6 ảnh bị bác** (25% hàng đợi) thành báo nhầm nếu khai hết, làm precision giảm.
 - **4 ảnh sai type** bị phạt **hai lần**: khai `class_swap` không có trong đáp án (FP), còn `category_swap` thật thì không được khai (FN). F1 chấm theo cặp (type, ảnh) nên đúng ảnh mà sai type vẫn tính là sai.
 - Sai type còn ảnh hưởng bàn giao: `class_swap` là lỗi detection nên ảnh bị **bỏ khỏi v2**, còn `category_swap` chỉ lỗi panoptic nên ảnh **ở lại v2**. Khai theo máy sẽ loại oan 4 ảnh.
+- **Lưu ý về số đo:** cột "Báo sau khi xem ảnh" giả định mọi kết luận review đều đúng, nên P/R/F1 = 1 chỉ là **giả định**, không phải số đo. `score_findings.py` trên `errors.json` cuối cho F1 lỗi gán nhãn **≈ 0,6** (làm tròn), tức một phần kết luận review hoặc type đã chọn vẫn chưa khớp đáp án, và còn có thể có lỗi gán nhãn validator không đưa vào hàng đợi. Nhóm không dò từng ảnh để sửa theo điểm (RULES).
 - Lô sạch ra 1 ứng viên / 50 ảnh, cho thấy hàng đợi luôn có lệch tự nhiên, nên bước xem ảnh là bắt buộc chứ không chỉ để cho đẹp.
 
 ## 3. Quyết định và lineage
@@ -59,4 +60,6 @@
 - **Vì sao lấy guideline theo job (`jobs.csv`) thay vì lấy theo `metadata.json`:** Vì trong lô dữ liệu có thể tồn tại lỗi `guideline_mismatch` (metadata của ảnh bị ghi sai phiên bản guideline so với phiên bản ban hành của job). Guideline là chính sách quản lý được phân bổ và thống nhất theo từng đợt công việc (Job), do đó thông tin tại `jobs.csv` là căn cứ xác thực gốc; việc lấy theo job giúp đảm bảo không bị bỏ sót hoặc khoanh vùng sai các ảnh cần truy vết.
 
 ## 6. Bug hoặc điểm chưa rõ trong lab (nếu có)
-<<>>
+- **CRLF làm lệch sha256 của lô v2 trên Windows (lỗi phía repo nhóm, không phải bug script).** Git for Windows mặc định `core.autocrlf=true`, khi checkout đổi file nhãn `.txt` trong `submission/r30007/handover/` từ LF sang CRLF. Trên GitHub file vẫn là LF (`git ls-files --eol` ra `i/lf w/crlf`), nhưng bytes trên máy đổi nên `check_handover.py` báo **H7** (nhãn bị sửa tay), **H8** (sha256 trong `manifest.csv` lệch) và **H15** (`.sha256` không khớp). Checkout lại không đổi ký tự xuống dòng thì đạt **17 PASS, 0 FAIL**. Cách sửa: thêm `.gitattributes` với dòng `submission/**/handover/** -text` để git giữ nguyên từng byte của lô bàn giao trên mọi máy.
+- **Lệch quy ước số dòng box giữa hai công cụ của nhóm.** Bản đầu của `validator/cross_check.py` đếm dòng nhãn từ 1 (`enumerate(..., start=1)`), còn `tools/viewer.py` hiểu trường `box` là chỉ số từ 0, nên ô vàng trên trang review tô lệch sang box bên cạnh (vd. ảnh `000000016010` ghi "dòng 2, 5" nhưng ảnh chỉ có D0–D4). Phát hiện khi xem ảnh, đã sửa về đếm từ 0 rồi dựng lại hàng đợi (28 → 24 ứng viên) và trang review trước khi chốt `review_log.csv`.
+- Không thấy bug trong `scripts/` của lab.
