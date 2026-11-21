@@ -1,0 +1,30 @@
+image,type,verdict,note,reviewer
+img_0006,category_swap,confirmed,"Chiếc xe lớn tối màu bị cột biển báo che gần hết, trên nóc có bảng LED chữ cam, đúng kiểu xe buýt. Detection D3 ghi bus là đúng, panoptic ghi truck là sai. Ngoài ra D10 truck chồng lên cùng vị trí.",Tung
+img_0028,class_swap,confirmed,detection đánh là bicycle thật và đang sai,Huong
+img_0036,class_swap,confirmed,"Phần tay vịn và đệm ghế sofa ở góc dưới bên trái ảnh, detection D7 gán nhầm thành bed trong khi panoptic gán couch là đúng.",Viet
+img_0045,class_swap,confirmed,"túi đen dưới gầm bàn dáng ba lô có quai xách trên đỉnh; detection D7 ghi handbag sai, panoptic backpack đúng",Huynh
+img_0061,category_swap,confirmed,Này Detection xác định đúng vật trong khi Panoptic ghi sai vật --> category_swap,Khanh
+img_0062,class_swap,confirmed,"Ở mép trái ngã tư là một chiếc sedan cũ dáng thấp, thân hộp, có cốp sau, không phải xe tải. Detection D12 ghi truck sai, panoptic ghi car đúng. D4 car cũng nằm cùng chỗ nên detection có hai box chồng nhau.",Tung
+img_0079,missing_box,confirmed,thiếu box detection cat,Huong
+img_0086,class_swap,confirmed,"Góc trên bên phải là mặt bàn ăn trải khăn họa tiết, detection D6 nhận diện nhầm thành chair còn panoptic gán dining table đúng.",Viet
+img_0109,instance_merge,rejected,"4 con vịt có 4 segment riêng; segment vàng chỉ phủ con trước D1, con sau D3 có segment màu khác, không bị gộp",Huynh
+img_0112,instance_merge,confirmed,"Detecsion xác định person D11 và D20 riêng biệt nhưng Panoptic lại vẽ chung 1 Segment cho cả 2 người, trong khi object bị nghi ngờ hoàn toàn bình thường",Khanh
+img_0113,instance_merge,rejected,"Người phụ nữ đội nón đội một nải chuối xanh trên đầu. D7 banana chỉ là mấy quả buông xuống ở mép trái của cùng nải với D6, nên đây là một cụm liền nhau. Panoptic gộp thành một segment banana là hợp lý, không phải hai nải riêng",Tung
+img_0115,class_swap,confirmed,trong ảnh là bowl nhưng detection đánh cup,Huong
+img_0117,bbox_drift,rejected,"Khung detection D0 ôm sát toàn bộ cơ thể con voi từ đầu đến chân rất chính xác, chỉ số IoU thấp do khoảng trống nền quanh chân voi.",Viet
+img_0120,class_swap,rejected,"túi xanh đậm trước em bé bị che và tối, không thấy quai nên không xác định được backpack hay handbag; không đủ căn cứ nói bên nào sai",Huynh
+img_0122,instance_merge,rejected,"Panoptic và Detection hoàn toàn phù hợp, không phát hiện ra lỗi",Khanh
+img_0131,class_swap,rejected,"Ảnh đen trắng bãi đậu xe máy rất đông, vật bị nghi là chiếc xe trắng nhỏ nằm xa ở phía sau, bị hàng xe máy che nhiều. Hình dáng giữa xe tải nhỏ, van và car khó phân biệt, IoU chỉ 0.69, nên đây là lệch tự nhiên do vật nhỏ và bị che.",Tung
+img_0145,class_swap,confirmed,lệch lớp detection và panoptic một bên là couch 1 bên là chair,Huong
+img_0146,class_swap,confirmed,"Xe bán tải màu xám bạc có thùng hàng phía sau, detection D1 ghi truck đúng (giống xe bán tải đỏ bên trái) còn panoptic ghi nhầm car.",Viet
+img_0169,class_swap,confirmed,"xe bán đồ ăn màu xanh có thùng là truck; detection D3 ghi bus sai, panoptic ghi truck đúng (D7 truck cũng đúng)",Huynh
+img_0171,instance_merge,confirmed,Hai Panoptic chỉ có 1 id chứ không tách ra thành 2 id riêng biệt,Khanh
+img_0178,bbox_drift,rejected,"Xe buýt xanh bên trái, xe van trắng ở sát phải, và một chiếc xe nhỏ trắng bị van che một phần ở phía sau. Box D1 car lấn sang phần nóc van vì xe nhỏ bị che, mask panoptic chỉ lấy phần nhìn thấy nên IoU thấp. Vị trí box vẫn đúng với chiếc xe, lệch do bị che.",Tung
+img_0185,instance_merge,rejected,2 phần 2 người được tô màu khác nhau rồi,Huong
+img_0191,instance_merge,confirmed,Hai người ngồi cạnh nhau ở mép trái bàn ăn được detection tách riêng thành D21 và D25 nhưng panoptic gộp chung thành một mảng màu vàng.,Viet
+img_0199,missing_box,confirmed,"người đứng sau bên trái người đội mũ trắng D4, bị che một phần nhưng thấy rõ thân và chân; panoptic có person, detection không có box",Huynh
+img_0226,class_swap,confirmed,"Backpack D7 bị nhận diẹn nhầm thành Suicate đồng thời bị vẽ chồng thêm 1 box Detection, trong khi Panoptic xác định đúng",Khanh
+img_0232,instance_merge,rejected,"Người đàn ông đạp xe máy xay sinh tố ở bên phải, đang cầm một vật ở tay gần mặt. D7 person chỉ là hộp rất nhỏ nằm trong D3, trùng với vùng tay và vật cầm, không phải người thứ hai. Panoptic một segment person cho người đạp xe là đúng.",Tung
+img_0237,instance_merge,rejected,mỗi car đã có 1 vùng segment riêng the từng màu,Huong
+img_0238,class_swap,confirmed,"Chiếc ghế tựa đơn bằng gỗ đặt cạnh các ghế khác, detection D1 nhận diện nhầm thành bench trong khi panoptic gán chair là chính xác.",Viet
+img_0245,missing_box,confirmed,"bồn cầu thấy rõ góc phải ảnh, panoptic có segment toilet nhưng detection chỉ có box D0 sink, thiếu box toilet",Huynh

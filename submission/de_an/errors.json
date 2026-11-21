@@ -9,6 +9,58 @@
    "target": "img_0119"
   },
   {
+   "type": "category_swap",
+   "target": "img_0006"
+  },
+  {
+   "type": "category_swap",
+   "target": "img_0061"
+  },
+  {
+   "type": "class_swap",
+   "target": "img_0028"
+  },
+  {
+   "type": "class_swap",
+   "target": "img_0036"
+  },
+  {
+   "type": "class_swap",
+   "target": "img_0045"
+  },
+  {
+   "type": "class_swap",
+   "target": "img_0062"
+  },
+  {
+   "type": "class_swap",
+   "target": "img_0086"
+  },
+  {
+   "type": "class_swap",
+   "target": "img_0115"
+  },
+  {
+   "type": "class_swap",
+   "target": "img_0145"
+  },
+  {
+   "type": "class_swap",
+   "target": "img_0146"
+  },
+  {
+   "type": "class_swap",
+   "target": "img_0169"
+  },
+  {
+   "type": "class_swap",
+   "target": "img_0226"
+  },
+  {
+   "type": "class_swap",
+   "target": "img_0238"
+  },
+  {
    "type": "duplicate_box",
    "target": "img_0023"
   },
@@ -25,8 +77,32 @@
    "target": "img_0069"
   },
   {
+   "type": "instance_merge",
+   "target": "img_0112"
+  },
+  {
+   "type": "instance_merge",
+   "target": "img_0171"
+  },
+  {
+   "type": "instance_merge",
+   "target": "img_0191"
+  },
+  {
    "type": "invalid_class",
    "target": "img_0063"
+  },
+  {
+   "type": "missing_box",
+   "target": "img_0079"
+  },
+  {
+   "type": "missing_box",
+   "target": "img_0199"
+  },
+  {
+   "type": "missing_box",
+   "target": "img_0245"
   },
   {
    "type": "missing_image",
