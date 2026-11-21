@@ -1,5 +1,5 @@
-Release: lab250_70a563f4cf6f_v2
-Parent: lab250_70a563f4cf6f
+Release: lab250_70d99e908798_v2
+Parent: lab250_70d99e908798
 Số ảnh: 235
 Số nhãn: 1635
 Guideline: v1.2 (J01-J04), v1.3 (J05-J10)
