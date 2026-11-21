@@ -1,0 +1,3 @@
+# Lô bàn giao v2: giữ nguyên từng byte (không đổi LF <-> CRLF khi checkout trên Windows),
+# nếu không sha256 trong manifest.csv / .sha256 sẽ lệch và check_handover báo H7, H8, H15 FAIL.
+submission/**/handover/** -text
